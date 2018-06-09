@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2E48B4F7197CA275264D95F /* Pods_Venue_Searcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D98CA5B1F59C136B0110EEF /* Pods_Venue_Searcher.framework */; };
+		C15B122320CB154800E7D5EB /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15B122220CB154800E7D5EB /* VenueView.swift */; };
+		C19C2BDC20CC05F60042D6EE /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C2BDB20CC05F60042D6EE /* VenueCell.swift */; };
 		C1A33F3B20CAC1EC00823DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A33F3A20CAC1EC00823DE5 /* AppDelegate.swift */; };
-		C1A33F3D20CAC1EC00823DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A33F3C20CAC1EC00823DE5 /* ViewController.swift */; };
 		C1A33F4020CAC1EC00823DE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A33F3E20CAC1EC00823DE5 /* Main.storyboard */; };
 		C1A33F4220CAC1ED00823DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1A33F4120CAC1ED00823DE5 /* Assets.xcassets */; };
 		C1A33F4520CAC1ED00823DE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A33F4320CAC1ED00823DE5 /* LaunchScreen.storyboard */; };
 		C1A33F5020CAC1ED00823DE5 /* Venue_SearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A33F4F20CAC1ED00823DE5 /* Venue_SearcherTests.swift */; };
+		C1E782A820CAF8F10090940E /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782A720CAF8F10090940E /* Venue.swift */; };
+		C1E782A920CAF8F10090940E /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782A720CAF8F10090940E /* Venue.swift */; };
+		C1E782AB20CAF9000090940E /* VenuePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782AA20CAF9000090940E /* VenuePresenter.swift */; };
+		C1E782AC20CAF9000090940E /* VenuePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782AA20CAF9000090940E /* VenuePresenter.swift */; };
+		C1E782AE20CAFE4A0090940E /* FoursquareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782AD20CAFE4A0090940E /* FoursquareService.swift */; };
+		C1E782AF20CAFE4A0090940E /* FoursquareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782AD20CAFE4A0090940E /* FoursquareService.swift */; };
+		C1E782B120CB00300090940E /* secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782B020CB00300090940E /* secrets.swift */; };
+		C1E782B220CB00300090940E /* secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782B020CB00300090940E /* secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		354648CDE168C1B7FF9A4673 /* Pods-Venue Searcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venue Searcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Venue Searcher/Pods-Venue Searcher.release.xcconfig"; sourceTree = "<group>"; };
+		683B1161110A216BEFB38596 /* Pods-Venue Searcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venue Searcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Venue Searcher/Pods-Venue Searcher.debug.xcconfig"; sourceTree = "<group>"; };
+		8D98CA5B1F59C136B0110EEF /* Pods_Venue_Searcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Venue_Searcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15B122220CB154800E7D5EB /* VenueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueView.swift; sourceTree = "<group>"; };
+		C19C2BDB20CC05F60042D6EE /* VenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
 		C1A33F3720CAC1EC00823DE5 /* Venue Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Venue Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A33F3A20CAC1EC00823DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1A33F3C20CAC1EC00823DE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1A33F3F20CAC1EC00823DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1A33F4120CAC1ED00823DE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A33F4420CAC1ED00823DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +50,10 @@
 		C1A33F4B20CAC1ED00823DE5 /* Venue SearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Venue SearcherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A33F4F20CAC1ED00823DE5 /* Venue_SearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue_SearcherTests.swift; sourceTree = "<group>"; };
 		C1A33F5120CAC1ED00823DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1E782A720CAF8F10090940E /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		C1E782AA20CAF9000090940E /* VenuePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuePresenter.swift; sourceTree = "<group>"; };
+		C1E782AD20CAFE4A0090940E /* FoursquareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareService.swift; sourceTree = "<group>"; };
+		C1E782B020CB00300090940E /* secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E48B4F7197CA275264D95F /* Pods_Venue_Searcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +75,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CF526891450C770DB1F26AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D98CA5B1F59C136B0110EEF /* Pods_Venue_Searcher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AF8DAC2763073A217603EB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				683B1161110A216BEFB38596 /* Pods-Venue Searcher.debug.xcconfig */,
+				354648CDE168C1B7FF9A4673 /* Pods-Venue Searcher.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C19C2BDD20CC06B40042D6EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C15B122220CB154800E7D5EB /* VenueView.swift */,
+				C19C2BDB20CC05F60042D6EE /* VenueCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C19C2BDE20CC06EA0042D6EE /* ViewPresenters */ = {
+			isa = PBXGroup;
+			children = (
+				C1E782AA20CAF9000090940E /* VenuePresenter.swift */,
+			);
+			path = ViewPresenters;
+			sourceTree = "<group>";
+		};
+		C19C2BDF20CC07050042D6EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1E782A720CAF8F10090940E /* Venue.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C19C2BE020CC07150042D6EE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C1A33F4620CAC1ED00823DE5 /* Info.plist */,
+				C1E782B020CB00300090940E /* secrets.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		C19C2BE120CC07250042D6EE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C1E782AD20CAFE4A0090940E /* FoursquareService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C1A33F2E20CAC1EC00823DE5 = {
 			isa = PBXGroup;
 			children = (
 				C1A33F3920CAC1EC00823DE5 /* Venue Searcher */,
 				C1A33F4E20CAC1ED00823DE5 /* Venue SearcherTests */,
 				C1A33F3820CAC1EC00823DE5 /* Products */,
+				5AF8DAC2763073A217603EB9 /* Pods */,
+				2CF526891450C770DB1F26AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +157,15 @@
 		C1A33F3920CAC1EC00823DE5 /* Venue Searcher */ = {
 			isa = PBXGroup;
 			children = (
+				C19C2BE120CC07250042D6EE /* Services */,
+				C19C2BE020CC07150042D6EE /* Support Files */,
+				C19C2BDF20CC07050042D6EE /* Models */,
+				C19C2BDE20CC06EA0042D6EE /* ViewPresenters */,
+				C19C2BDD20CC06B40042D6EE /* Views */,
 				C1A33F3A20CAC1EC00823DE5 /* AppDelegate.swift */,
-				C1A33F3C20CAC1EC00823DE5 /* ViewController.swift */,
-				C1A33F3E20CAC1EC00823DE5 /* Main.storyboard */,
 				C1A33F4120CAC1ED00823DE5 /* Assets.xcassets */,
+				C1A33F3E20CAC1EC00823DE5 /* Main.storyboard */,
 				C1A33F4320CAC1ED00823DE5 /* LaunchScreen.storyboard */,
-				C1A33F4620CAC1ED00823DE5 /* Info.plist */,
 			);
 			path = "Venue Searcher";
 			sourceTree = "<group>";
@@ -103,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1A33F5420CAC1ED00823DE5 /* Build configuration list for PBXNativeTarget "Venue Searcher" */;
 			buildPhases = (
+				C6F469911C1DB2C78C2F52DA /* [CP] Check Pods Manifest.lock */,
 				C1A33F3320CAC1EC00823DE5 /* Sources */,
 				C1A33F3420CAC1EC00823DE5 /* Frameworks */,
 				C1A33F3520CAC1EC00823DE5 /* Resources */,
+				C9771E1121C4F9B88049C8AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,13 +277,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C6F469911C1DB2C78C2F52DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Venue Searcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9771E1121C4F9B88049C8AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Venue Searcher/Pods-Venue Searcher-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Venue Searcher/Pods-Venue Searcher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C1A33F3320CAC1EC00823DE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1A33F3D20CAC1EC00823DE5 /* ViewController.swift in Sources */,
+				C1E782A820CAF8F10090940E /* Venue.swift in Sources */,
+				C1E782AE20CAFE4A0090940E /* FoursquareService.swift in Sources */,
+				C1E782AB20CAF9000090940E /* VenuePresenter.swift in Sources */,
+				C19C2BDC20CC05F60042D6EE /* VenueCell.swift in Sources */,
 				C1A33F3B20CAC1EC00823DE5 /* AppDelegate.swift in Sources */,
+				C1E782B120CB00300090940E /* secrets.swift in Sources */,
+				C15B122320CB154800E7D5EB /* VenueView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1E782AF20CAFE4A0090940E /* FoursquareService.swift in Sources */,
 				C1A33F5020CAC1ED00823DE5 /* Venue_SearcherTests.swift in Sources */,
+				C1E782B220CB00300090940E /* secrets.swift in Sources */,
+				C1E782A920CAF8F10090940E /* Venue.swift in Sources */,
+				C1E782AC20CAF9000090940E /* VenuePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +489,7 @@
 		};
 		C1A33F5520CAC1ED00823DE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683B1161110A216BEFB38596 /* Pods-Venue Searcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,6 +507,7 @@
 		};
 		C1A33F5620CAC1ED00823DE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 354648CDE168C1B7FF9A4673 /* Pods-Venue Searcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
