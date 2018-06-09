@@ -27,7 +27,7 @@ class VenueCell: UITableViewCell {
     func setData(venue: Venue, distance: Double) {
         self.venueLabel.text = venue.name
         
-        let formatted = NSString(format: "%.1f", distance)
+        let formatted = NSString(format: "%.1fm", distance)
 
         self.distanceLabel.text = String(formatted)
     }

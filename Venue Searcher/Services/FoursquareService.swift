@@ -27,17 +27,21 @@ class FourSquareService {
     
     private let apiUrl = "https://api.foursquare.com/v2/venues/search"
     
-    func getVenues(lat: Double, lng: Double) throws {
-        let parameters = ["client_id": secrets.clientId,
+    func getVenues(lat: Double, lng: Double, query: String?) throws {
+        var parameters = ["client_id": secrets.clientId,
                           "client_secret": secrets.clientSecret,
                           "v": "20180323",
                           "ll": "\(lat),\(lng)"]
+        
+        if let query = query {
+            parameters["query"] = query
+        }
         
         Alamofire.request(apiUrl, parameters: parameters).responseJSON { [unowned self] response in
             do {
                 try self.parseVenuedata(json: response.result.value as! [String: Any])
             } catch {
-                print("TODO Error")
+                print(error)
             }
         }
     }
@@ -49,7 +53,7 @@ class FourSquareService {
         if  let responseData = json["response"] as? [String: Any], let venuesData = responseData["venues"] as? [[String: Any]] {
             var lat: Double
             var lng: Double
-            var category: String
+            var category: String?
             var address: String?
             for venueData in venuesData {
                 let name = venueData["name"] as! String
@@ -65,15 +69,12 @@ class FourSquareService {
                 
                 if let categories = venueData["categories"] as? [[String: Any]], let categoryData = categories.first {
                     category = categoryData["shortName"] as! String
-                } else {
-                    throw ServiceError.invalidData(reason: "category data is missing")
-                }
+                } 
                 
                 let venue = Venue(name: name, lat: lat, lng: lng, category: category, address: address)
                 venues.append(venue)
             }
         }
-        print(venues)
         self.delegate?.received(venues: venues)
     }
 }

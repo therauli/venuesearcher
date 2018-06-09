@@ -18,7 +18,7 @@ protocol VenueListInterface {
 
 class VenueView: UIViewController {
 
-    @IBOutlet weak var venueTestField: UITextField!
+    @IBOutlet weak var venueTextField: UITextField!
     @IBOutlet weak var venueTableView: UITableView!
     
     let venuePresenter = VenuePresenter()
@@ -34,6 +34,12 @@ class VenueView: UIViewController {
         venueTableView.delegate = self
         
     }
+    
+    @IBAction func venueTextFieldChanged(_ sender: UITextField) {
+        self.venuePresenter.search(term: sender.text)
+        
+    }
+    
     
     func showError(error: Error) {
         let alertController = UIAlertController(title: "Location Error", message: "There was an error accessing current location: \(error.localizedDescription)", preferredStyle: .alert)
@@ -74,10 +80,12 @@ extension VenueView: VenueListInterface {
     }
     
     func showEmptyView() {
+        venueTableView.isHidden = true
         
     }
     
     func reloadList(venues: [Venue]) {
+        venueTableView.isHidden = false
         venueList = venues
         venueTableView.reloadData()
     }

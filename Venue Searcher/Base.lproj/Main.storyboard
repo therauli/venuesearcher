@@ -31,27 +31,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-ot-bOM">
-                                                    <rect key="frame" x="15" y="11" width="244" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="226" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU1-7k-Zck">
-                                                    <rect key="frame" x="267" y="11" width="61" height="21"/>
+                                                    <rect key="frame" x="249" y="11" width="79" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="61" id="R5s-MC-QK0"/>
+                                                        <constraint firstAttribute="width" constant="79" id="iLX-Kk-Fpd"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jt4-ot-bOM" firstAttribute="baseline" secondItem="AU1-7k-Zck" secondAttribute="baseline" id="G7Q-uk-Nmr"/>
-                                                <constraint firstItem="AU1-7k-Zck" firstAttribute="leading" secondItem="jt4-ot-bOM" secondAttribute="trailing" constant="8" symbolic="YES" id="JFG-Mj-FSz"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="AU1-7k-Zck" secondAttribute="trailing" constant="-1" id="QFk-vb-IRN"/>
-                                                <constraint firstItem="jt4-ot-bOM" firstAttribute="leading" secondItem="tjo-Cc-Ha4" secondAttribute="leadingMargin" constant="-1" id="gVe-at-PLj"/>
-                                                <constraint firstItem="jt4-ot-bOM" firstAttribute="centerY" secondItem="tjo-Cc-Ha4" secondAttribute="centerY" id="wbw-aa-31J"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AU1-7k-Zck" secondAttribute="trailing" constant="-1" id="2k5-2o-qOS"/>
+                                                <constraint firstItem="jt4-ot-bOM" firstAttribute="baseline" secondItem="AU1-7k-Zck" secondAttribute="baseline" id="6AF-UT-sPI"/>
+                                                <constraint firstItem="jt4-ot-bOM" firstAttribute="leading" secondItem="tjo-Cc-Ha4" secondAttribute="leadingMargin" constant="-1" id="P85-cW-vrH"/>
+                                                <constraint firstItem="AU1-7k-Zck" firstAttribute="leading" secondItem="jt4-ot-bOM" secondAttribute="trailing" constant="8" symbolic="YES" id="pct-sm-m9x"/>
+                                                <constraint firstItem="jt4-ot-bOM" firstAttribute="centerY" secondItem="tjo-Cc-Ha4" secondAttribute="centerY" id="qyE-NP-AbB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -72,6 +72,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="venueTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="BhN-3j-gsb"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,7 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="venueTableView" destination="xbp-lE-nj3" id="VCT-hR-dqD"/>
-                        <outlet property="venueTestField" destination="868-9l-XgR" id="uEk-eX-3lN"/>
+                        <outlet property="venueTextField" destination="868-9l-XgR" id="uEk-eX-3lN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

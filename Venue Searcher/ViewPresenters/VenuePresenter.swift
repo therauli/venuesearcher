@@ -20,7 +20,7 @@ class VenuePresenter: NSObject {
     private(set) var location: CLLocation?
     
     let locationManager = CLLocationManager()
-
+    
     override init() {
         super.init()
         self.locationManager.requestWhenInUseAuthorization()
@@ -29,24 +29,28 @@ class VenuePresenter: NSObject {
     
     func requestLocation() {
         locationManager.requestLocation()
-
     }
+    
+    func search(term: String?) {
+        if let coordinate = location?.coordinate {
+            FourSquareService.sharedInstance.delegate = self
+            do {
+                try FourSquareService.sharedInstance.getVenues(lat: coordinate.latitude, lng: coordinate.longitude, query: term)
+            } catch {
+                self.view?.showError(error: error)
+            }
+        }
+        
+    }
+    
 }
 
 extension VenuePresenter: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        for loc in locations {
-            location = loc
-            let coordinate = loc.coordinate
-            FourSquareService.sharedInstance.delegate = self
-            do {
-                try FourSquareService.sharedInstance.getVenues(lat: coordinate.latitude, lng: coordinate.longitude)
-            } catch {
-                self.view?.showError(error: error)
-            }
-        }
+        location = locations.first
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         view?.showError(error: error)
@@ -55,7 +59,9 @@ extension VenuePresenter: CLLocationManagerDelegate {
 
 extension VenuePresenter: FourSquareServiceDelegate {
     func received(venues: [Venue]) {
-        view?.reloadList(venues: venues)        
+        view?.reloadList(venues: venues.sorted {
+            $0.distance(from: location!) < $1.distance(from: location!)
+        })
     }
     
 }
