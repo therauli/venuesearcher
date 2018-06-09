@@ -10,7 +10,7 @@ import UIKit
 
 class VenueCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var venueLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
     override func awakeFromNib() {
@@ -22,6 +22,14 @@ class VenueCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setData(venue: Venue, distance: Double) {
+        self.venueLabel.text = venue.name
+        
+        let formatted = NSString(format: "%.1f", distance)
+
+        self.distanceLabel.text = String(formatted)
     }
 
 }

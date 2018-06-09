@@ -120,7 +120,6 @@
 		C19C2BE020CC07150042D6EE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C1A33F4620CAC1ED00823DE5 /* Info.plist */,
 				C1E782B020CB00300090940E /* secrets.swift */,
 			);
 			path = "Support Files";
@@ -157,6 +156,7 @@
 		C1A33F3920CAC1EC00823DE5 /* Venue Searcher */ = {
 			isa = PBXGroup;
 			children = (
+				C1A33F4620CAC1ED00823DE5 /* Info.plist */,
 				C19C2BE120CC07250042D6EE /* Services */,
 				C19C2BE020CC07150042D6EE /* Support Files */,
 				C19C2BDF20CC07050042D6EE /* Models */,

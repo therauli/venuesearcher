@@ -13,7 +13,7 @@ protocol VenueListInterface {
     func showLoading()
     func hideLoading()
     func showEmptyView()
-    func reloadList(data: [Venue])
+    func reloadList(venues: [Venue])
 }
 
 class VenueView: UIViewController {
@@ -27,7 +27,11 @@ class VenueView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        venuePresenter.view = self
         venuePresenter.requestLocation()
+        
+        venueTableView.dataSource = self
+        venueTableView.delegate = self
         
     }
     
@@ -49,7 +53,12 @@ extension VenueView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "venuecell") as! VenueCell
+        
+        var venue = venueList[indexPath.row]
+        cell.setData(venue: venue, distance: venue.distance(from: venuePresenter.location!))
+
+        return cell
     }
     
     
@@ -57,19 +66,20 @@ extension VenueView: UITableViewDelegate, UITableViewDataSource {
 
 extension VenueView: VenueListInterface {
     func showLoading() {
-        <#code#>
+        
     }
     
     func hideLoading() {
-        <#code#>
+        
     }
     
     func showEmptyView() {
-        <#code#>
+        
     }
     
-    func reloadList(data: [Venue]) {
-        <#code#>
+    func reloadList(venues: [Venue]) {
+        venueList = venues
+        venueTableView.reloadData()
     }
     
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Venue {
     let name: String
@@ -15,4 +16,20 @@ struct Venue {
     let category: String
 
     let address: String?
+    
+    private lazy var location: CLLocation = {
+       return CLLocation(latitude: lat, longitude: lng)
+    }()
+    
+    init(name: String, lat: Double, lng: Double, category: String, address: String?) {
+        self.name = name
+        self.lat = lat
+        self.lng = lng
+        self.category = category
+        self.address = address
+    }
+    
+    mutating func distance(from other: CLLocation) -> Double {
+        return other.distance(from: location)
+    }
 }

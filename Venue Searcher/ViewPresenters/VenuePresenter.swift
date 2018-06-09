@@ -15,6 +15,10 @@ protocol VenueFoo {
 
 class VenuePresenter: NSObject {
     
+    var view: VenueView?
+    
+    private(set) var location: CLLocation?
+    
     let locationManager = CLLocationManager()
 
     override init() {
@@ -32,30 +36,26 @@ class VenuePresenter: NSObject {
 extension VenuePresenter: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("UP")
-        for location in locations {
-            print(location)
-            let coordinate = location.coordinate
+        for loc in locations {
+            location = loc
+            let coordinate = loc.coordinate
             FourSquareService.sharedInstance.delegate = self
             do {
                 try FourSquareService.sharedInstance.getVenues(lat: coordinate.latitude, lng: coordinate.longitude)
             } catch {
-                print("OHNO")
+                self.view?.showError(error: error)
             }
-
-            
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("foo2")
-        
+        view?.showError(error: error)
     }
 }
 
 extension VenuePresenter: FourSquareServiceDelegate {
     func received(venues: [Venue]) {
-        print(venues)
+        view?.reloadList(venues: venues)        
     }
     
 }
