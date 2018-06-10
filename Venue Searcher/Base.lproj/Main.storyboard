@@ -23,7 +23,7 @@
                                 <rect key="frame" x="16" y="87" width="343" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="Agy-JG-bw5">
-                                    <rect key="frame" x="0.0" y="72" width="343" height="20"/>
+                                    <rect key="frame" x="0.0" y="116" width="343" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <prototypes>
@@ -62,6 +62,27 @@
                                             <outlet property="distanceLabel" destination="AU1-7k-Zck" id="sLu-Ov-i1N"/>
                                             <outlet property="venueLabel" destination="jt4-ot-bOM" id="V41-ZM-7H6"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nodatacell" id="BQU-PU-3Im">
+                                        <rect key="frame" x="0.0" y="72" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BQU-PU-3Im" id="0zV-LI-dC8">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEX-ts-FSF">
+                                                    <rect key="frame" x="15" y="12" width="313" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jEX-ts-FSF" firstAttribute="bottom" secondItem="0zV-LI-dC8" secondAttribute="bottomMargin" id="Alh-gE-kW9"/>
+                                                <constraint firstItem="jEX-ts-FSF" firstAttribute="centerX" secondItem="0zV-LI-dC8" secondAttribute="centerX" id="Opz-a8-748"/>
+                                                <constraint firstItem="jEX-ts-FSF" firstAttribute="leading" secondItem="0zV-LI-dC8" secondAttribute="leadingMargin" constant="-1" id="Q6K-pl-sJ6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

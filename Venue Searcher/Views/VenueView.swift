@@ -55,13 +55,21 @@ class VenueView: UIViewController {
 
 extension VenueView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if venueList.count == 0 {
+            return 1
+        }
         return venueList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if venueList.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "nodatacell") as! UITableViewCell
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "venuecell") as! VenueCell
         
-        var venue = venueList[indexPath.row]
+        let venue = venueList[indexPath.row]
         cell.setData(venue: venue, distance: venue.distance(from: venuePresenter.location!))
 
         return cell
