@@ -20,6 +20,7 @@ class VenueView: UIViewController {
 
     @IBOutlet weak var venueTextField: UITextField!
     @IBOutlet weak var venueTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let venuePresenter = VenuePresenter()
     
@@ -37,7 +38,6 @@ class VenueView: UIViewController {
     
     @IBAction func venueTextFieldChanged(_ sender: UITextField) {
         self.venuePresenter.search(term: sender.text)
-        
     }
     
     
@@ -72,10 +72,13 @@ extension VenueView: UITableViewDelegate, UITableViewDataSource {
 
 extension VenueView: VenueListInterface {
     func showLoading() {
-        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()        
     }
     
     func hideLoading() {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
         
     }
     

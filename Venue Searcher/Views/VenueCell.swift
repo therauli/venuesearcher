@@ -36,7 +36,7 @@ class VenueCell: UITableViewCell {
         default:
             return String(NSString(format: "%.1fkm", distance / 1000.0))
         }
-       
+
     }
 
-}   
+}

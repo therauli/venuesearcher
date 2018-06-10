@@ -32,11 +32,13 @@ class VenuePresenter: NSObject {
     }
     
     func search(term: String?) {
+        self.view?.showLoading()
         if let coordinate = location?.coordinate {
             FourSquareService.sharedInstance.delegate = self
             do {
                 try FourSquareService.sharedInstance.getVenues(lat: coordinate.latitude, lng: coordinate.longitude, query: term)
             } catch {
+                self.view?.hideLoading()
                 self.view?.showError(error: error)
             }
         }
@@ -59,6 +61,7 @@ extension VenuePresenter: CLLocationManagerDelegate {
 
 extension VenuePresenter: FourSquareServiceDelegate {
     func received(venues: [Venue]) {
+        view?.hideLoading()
         view?.reloadList(venues: venues.sorted {
             $0.distance(from: location!) < $1.distance(from: location!)
         })
