@@ -28,6 +28,12 @@ class VenuePresenter: NSObject {
     }
     
     func search(term: String?) {
+        if term == "" {
+            view?.reloadList(venues: [Venue]())
+            view?.hideLoading()
+            return
+        }
+        
         self.view?.showLoading()
         if let coordinate = location?.coordinate {
             FourSquareService.sharedInstance.delegate = self
