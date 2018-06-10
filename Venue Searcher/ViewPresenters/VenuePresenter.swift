@@ -9,10 +9,6 @@
 import Foundation
 import CoreLocation
 
-protocol VenueFoo {
-    
-}
-
 class VenuePresenter: NSObject {
     
     var view: VenueView?

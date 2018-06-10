@@ -61,7 +61,7 @@ class FourSquareService {
                     lat = venueLocation["lat"] as! Double
                     lng = venueLocation["lng"] as! Double
                     if let addressList = venueLocation["formattedAddress"] as? [String] {
-                        address = addressList.joined(separator: ", ")
+                        address = addressList.joined(separator: "\n")
                     }
                 } else {
                     throw ServiceError.invalidData(reason: "location data is missing")

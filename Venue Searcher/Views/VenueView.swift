@@ -75,7 +75,41 @@ extension VenueView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard venueList.count != 0 else {
+            return
+        }
+        
+        if let cell = tableView.cellForRow(at: indexPath) {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let detailView = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! VenueDetailView
+            
+            detailView.venue = venueList[indexPath.row]
+            detailView.modalPresentationStyle = UIModalPresentationStyle.popover
+            detailView.preferredContentSize = CGSize(width: 260, height: 200)
+            
+            let popoverPresentationController = detailView.popoverPresentationController
+            popoverPresentationController?.sourceView = cell
+            popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: (cell.frame.width), height: cell.frame.height)
+            popoverPresentationController?.delegate = self
+            popoverPresentationController?.permittedArrowDirections = .any
+            
+            present(detailView, animated: true, completion: nil)
+        }
+
+    }
     
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+}
+
+extension VenueView: UIPopoverPresentationControllerDelegate {
+    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return true
+    }
 }
 
 extension VenueView: VenueListInterface {

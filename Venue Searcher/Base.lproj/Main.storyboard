@@ -127,5 +127,65 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="109.29535232383809"/>
         </scene>
+        <!--Venue Detail View-->
+        <scene sceneID="pPM-ec-l68">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="HEi-SC-FEt" customClass="VenueDetailView" customModule="Venue_Searcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5oB-dj-2v9">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCt-Vh-VlP">
+                                <rect key="frame" x="16" y="20" width="328" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cmc-yf-LnN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D6-ON-Ryu">
+                                <rect key="frame" x="16" y="49" width="328" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RH4-f6-HCz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ne-aH-kaU">
+                                <rect key="frame" x="16" y="78" width="328" height="102"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="q3V-d9-0dO" firstAttribute="trailing" secondItem="RCt-Vh-VlP" secondAttribute="trailing" constant="16" id="65O-Eb-Dnn"/>
+                            <constraint firstItem="3Ne-aH-kaU" firstAttribute="top" secondItem="8D6-ON-Ryu" secondAttribute="bottom" constant="8" symbolic="YES" id="8wo-rF-iaw"/>
+                            <constraint firstItem="3Ne-aH-kaU" firstAttribute="leading" secondItem="8D6-ON-Ryu" secondAttribute="leading" id="A4P-8Y-oju"/>
+                            <constraint firstItem="8D6-ON-Ryu" firstAttribute="top" secondItem="RCt-Vh-VlP" secondAttribute="bottom" constant="8" id="FXK-ch-U54"/>
+                            <constraint firstItem="q3V-d9-0dO" firstAttribute="bottom" secondItem="3Ne-aH-kaU" secondAttribute="bottom" constant="20" id="WD6-4B-RQz"/>
+                            <constraint firstItem="8D6-ON-Ryu" firstAttribute="centerX" secondItem="q3V-d9-0dO" secondAttribute="centerX" id="cxv-Cc-GDO"/>
+                            <constraint firstItem="8D6-ON-Ryu" firstAttribute="leading" secondItem="q3V-d9-0dO" secondAttribute="leading" constant="16" id="dul-WP-cSZ"/>
+                            <constraint firstItem="RCt-Vh-VlP" firstAttribute="centerX" secondItem="q3V-d9-0dO" secondAttribute="centerX" id="i9n-I3-Dea"/>
+                            <constraint firstItem="3Ne-aH-kaU" firstAttribute="trailing" secondItem="8D6-ON-Ryu" secondAttribute="trailing" id="l4k-5o-vQM"/>
+                            <constraint firstItem="RCt-Vh-VlP" firstAttribute="leading" secondItem="q3V-d9-0dO" secondAttribute="leading" constant="16" id="npE-4d-zAr"/>
+                            <constraint firstItem="q3V-d9-0dO" firstAttribute="trailing" secondItem="8D6-ON-Ryu" secondAttribute="trailing" constant="16" id="rfc-GI-62D"/>
+                            <constraint firstItem="RCt-Vh-VlP" firstAttribute="top" secondItem="5oB-dj-2v9" secondAttribute="top" constant="20" symbolic="YES" id="ujM-BY-xbG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q3V-d9-0dO"/>
+                    </view>
+                    <size key="freeformSize" width="360" height="200"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="3Ne-aH-kaU" id="KAN-rY-hfZ"/>
+                        <outlet property="categoryLabel" destination="8D6-ON-Ryu" id="Cl2-Jx-Sp5"/>
+                        <outlet property="titleLabel" destination="RCt-Vh-VlP" id="9WN-QF-vYz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mem-JB-ene" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780.79999999999995" y="107.94602698650675"/>
+        </scene>
     </scenes>
 </document>
