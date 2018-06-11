@@ -43,8 +43,8 @@ class VenuePresenter: NSObject {
         do {
             try FourSquareService.sharedInstance.getVenues(lat: coordinate.latitude, lng: coordinate.longitude, query: term)
         } catch {
-            self.view?.hideLoading()
-            self.view?.showError(error: error)
+            view?.hideLoading()
+            view?.showError(error: error)
         }
         
     }
