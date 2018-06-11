@@ -10,6 +10,7 @@ import XCTest
 
 class MockServiceDelegate: FourSquareServiceDelegate {
     var venues: [Venue]?
+    var wasThereError = false
     
     
     func received(venues: [Venue]) {
@@ -17,10 +18,8 @@ class MockServiceDelegate: FourSquareServiceDelegate {
     }
     
     func received(error: Error) {
-        
+        wasThereError = true
     }
-    
-    
 }
 
 
@@ -50,12 +49,14 @@ class FoursquareServiceTests: XCTestCase {
         
         if result == .timedOut {
             XCTAssertNotNil(mock.venues, "Service should provide some venues always")
+            XCTAssertEqual(mock.wasThereError, false, "Service should not throw an error")
         } else {
             XCTFail("Delay was interrupted")
         }
         
     }
     
+    /// tests that you get an empty list if the query does not make sense.
     func testNotFound() {
         let notFoundExpectation = expectation(description: "not found tests works")
         
@@ -66,10 +67,31 @@ class FoursquareServiceTests: XCTestCase {
         if result == .timedOut {
             XCTAssertNotNil(mock.venues, "Service should provide a non-optional list with an impossible query")
             XCTAssertEqual(mock.venues?.count, 0, "Service should provide an empty list with an impossible query")
+            XCTAssertEqual(mock.wasThereError, false, "Service should not throw an error")
         } else {
             XCTFail("Delay was interrupted")
         }
-
     }
+    
+    /// Test that parser works if the response body is empty. This is not a real-life screnari according the API docs
+    func testParserEmptyResponse() {
+        let venues = try? FourSquareService.sharedInstance.parseVenuedata(json: [String:Any]())
+        XCTAssertEqual(venues?.count, 0, "Even with empty response we should get an empty list")
+    }
+    
+    /// Test that parser works even if the venues is empty
+    func testParserNoNameInResponse() {
+        let data = ["response": ["venues": [["kissa": 3.5]]]]
+        do {
+            let _ = try FourSquareService.sharedInstance.parseVenuedata(json: data)
+            XCTFail("Should throw an error with invalid data")
+        } catch ServiceError.invalidData(let message) {
+            XCTAssertEqual(message, "No name in venue Data", "Wrong error thrown")
+        } catch {
+            XCTFail("Wrong error thrown")
+        }
+    }
+    
+    
     
 }
