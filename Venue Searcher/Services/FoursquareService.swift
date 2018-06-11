@@ -11,6 +11,7 @@ import Alamofire
 
 protocol FourSquareServiceDelegate {
     func received(venues: [Venue])
+    func received(error: Error)
 }
 
 
@@ -28,6 +29,7 @@ class FourSquareService {
     private let apiUrl = "https://api.foursquare.com/v2/venues/search"
     
     func getVenues(lat: Double, lng: Double, query: String?) throws {
+
         var parameters = ["client_id": secrets.clientId,
                           "client_secret": secrets.clientSecret,
                           "v": "20180323",
@@ -37,11 +39,16 @@ class FourSquareService {
             parameters["query"] = query
         }
         
-        Alamofire.request(apiUrl, parameters: parameters).responseJSON { [unowned self] response in
-            do {
-                try self.parseVenuedata(json: response.result.value as! [String: Any])
-            } catch {
-                print(error)
+        Alamofire.request(apiUrl, parameters: parameters).validate(statusCode: 200...200).responseJSON { [unowned self] response in
+            switch response.result {
+            case .failure(let error):
+                self.delegate?.received(error: error)
+            case .success:
+                do {
+                    try self.parseVenuedata(json: response.result.value as! [String: Any])
+                } catch {
+                    self.delegate?.received(error: error)
+                }
             }
         }
     }

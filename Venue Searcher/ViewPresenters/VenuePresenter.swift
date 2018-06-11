@@ -65,6 +65,10 @@ extension VenuePresenter: CLLocationManagerDelegate {
 }
 
 extension VenuePresenter: FourSquareServiceDelegate {
+    func received(error: Error) {
+        view?.showError(error: error)
+    }
+    
     func received(venues: [Venue]) {
         view?.hideLoading()
         view?.reloadList(venues: venues.sorted {
