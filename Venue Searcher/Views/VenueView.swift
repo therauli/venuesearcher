@@ -12,8 +12,9 @@ import CoreLocation
 protocol VenueListInterface {
     func showLoading()
     func hideLoading()
-    func showEmptyView()
     func reloadList(venues: [Venue])
+    func showError(error: Error)
+    func readyForSearch()
 }
 
 class VenueView: UIViewController {
@@ -34,22 +35,13 @@ class VenueView: UIViewController {
         venueTableView.dataSource = self
         venueTableView.delegate = self
         
+        venueTextField.isEnabled = false
+        venueTextField.placeholder = "Waiting for location information..."
+        
     }
     
     @IBAction func venueTextFieldChanged(_ sender: UITextField) {
         self.venuePresenter.search(term: sender.text)
-    }
-    
-    
-    func showError(error: Error) {
-        let alertController = UIAlertController(title: "Location Error", message: "There was an error accessing current location: \(error.localizedDescription)", preferredStyle: .alert)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
@@ -124,18 +116,22 @@ extension VenueView: VenueListInterface {
         
     }
     
-    func showEmptyView() {
-        venueTableView.isHidden = true
-        
-    }
-    
     func reloadList(venues: [Venue]) {
         venueTableView.isHidden = false
         venueList = venues
         venueTableView.reloadData()
     }
     
+    func showError(error: Error) {
+        let alertController = UIAlertController(title: "Error", message: "There was an error: \(error.localizedDescription)", preferredStyle: .alert)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
+    func readyForSearch() {
+        venueTextField.isEnabled = true
+        venueTextField.placeholder = "Start by entering search term"
+    }
 }
 
 

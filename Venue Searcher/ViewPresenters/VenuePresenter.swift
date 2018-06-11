@@ -11,7 +11,7 @@ import CoreLocation
 
 class VenuePresenter: NSObject {
     
-    var view: VenueView?
+    var view: VenueListInterface?
     
     private(set) var location: CLLocation?
     
@@ -30,19 +30,21 @@ class VenuePresenter: NSObject {
     func search(term: String?) {
         if term == "" {
             view?.reloadList(venues: [Venue]())
-            view?.hideLoading()
+            return
+        }
+
+        guard let coordinate = location?.coordinate else {
             return
         }
         
         self.view?.showLoading()
-        if let coordinate = location?.coordinate {
-            FourSquareService.sharedInstance.delegate = self
-            do {
-                try FourSquareService.sharedInstance.getVenues(lat: coordinate.latitude, lng: coordinate.longitude, query: term)
-            } catch {
-                self.view?.hideLoading()
-                self.view?.showError(error: error)
-            }
+        
+        FourSquareService.sharedInstance.delegate = self
+        do {
+            try FourSquareService.sharedInstance.getVenues(lat: coordinate.latitude, lng: coordinate.longitude, query: term)
+        } catch {
+            self.view?.hideLoading()
+            self.view?.showError(error: error)
         }
         
     }
@@ -53,6 +55,7 @@ extension VenuePresenter: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first
+        view?.readyForSearch()
     }
     
     
