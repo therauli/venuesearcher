@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462CC0563066713E0350803F /* Pods_Venue_SearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF92495DFE7F08C2ACC9D5F1 /* Pods_Venue_SearcherTests.framework */; };
 		A2E48B4F7197CA275264D95F /* Pods_Venue_Searcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D98CA5B1F59C136B0110EEF /* Pods_Venue_Searcher.framework */; };
 		C15B122320CB154800E7D5EB /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15B122220CB154800E7D5EB /* VenueView.swift */; };
 		C19C2BDC20CC05F60042D6EE /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C2BDB20CC05F60042D6EE /* VenueCell.swift */; };
 		C19C2BE720CDB1CB0042D6EE /* VenueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C2BE620CDB1CB0042D6EE /* VenueDetailView.swift */; };
+		C19C2BEA20CE3C690042D6EE /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15B122220CB154800E7D5EB /* VenueView.swift */; };
+		C19C2BEB20CE3C6D0042D6EE /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C2BDB20CC05F60042D6EE /* VenueCell.swift */; };
+		C19C2BEC20CE3C710042D6EE /* VenueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C2BE620CDB1CB0042D6EE /* VenueDetailView.swift */; };
 		C1A33F3B20CAC1EC00823DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A33F3A20CAC1EC00823DE5 /* AppDelegate.swift */; };
 		C1A33F4020CAC1EC00823DE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A33F3E20CAC1EC00823DE5 /* Main.storyboard */; };
 		C1A33F4220CAC1ED00823DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1A33F4120CAC1ED00823DE5 /* Assets.xcassets */; };
 		C1A33F4520CAC1ED00823DE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A33F4320CAC1ED00823DE5 /* LaunchScreen.storyboard */; };
-		C1A33F5020CAC1ED00823DE5 /* Venue_SearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A33F4F20CAC1ED00823DE5 /* Venue_SearcherTests.swift */; };
+		C1A33F5020CAC1ED00823DE5 /* VenuePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A33F4F20CAC1ED00823DE5 /* VenuePresenterTest.swift */; };
 		C1E782A820CAF8F10090940E /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782A720CAF8F10090940E /* Venue.swift */; };
 		C1E782A920CAF8F10090940E /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782A720CAF8F10090940E /* Venue.swift */; };
 		C1E782AB20CAF9000090940E /* VenuePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E782AA20CAF9000090940E /* VenuePresenter.swift */; };
@@ -37,8 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F727521AB69F20C6BE5867C /* Pods-Venue SearcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venue SearcherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Venue SearcherTests/Pods-Venue SearcherTests.release.xcconfig"; sourceTree = "<group>"; };
 		354648CDE168C1B7FF9A4673 /* Pods-Venue Searcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venue Searcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Venue Searcher/Pods-Venue Searcher.release.xcconfig"; sourceTree = "<group>"; };
 		683B1161110A216BEFB38596 /* Pods-Venue Searcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venue Searcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Venue Searcher/Pods-Venue Searcher.debug.xcconfig"; sourceTree = "<group>"; };
+		76F7B237942E7EAEA513DE32 /* Pods-Venue SearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venue SearcherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Venue SearcherTests/Pods-Venue SearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D98CA5B1F59C136B0110EEF /* Pods_Venue_Searcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Venue_Searcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15B122220CB154800E7D5EB /* VenueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueView.swift; sourceTree = "<group>"; };
 		C19C2BDB20CC05F60042D6EE /* VenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
@@ -50,12 +56,13 @@
 		C1A33F4420CAC1ED00823DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1A33F4620CAC1ED00823DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1A33F4B20CAC1ED00823DE5 /* Venue SearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Venue SearcherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1A33F4F20CAC1ED00823DE5 /* Venue_SearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue_SearcherTests.swift; sourceTree = "<group>"; };
+		C1A33F4F20CAC1ED00823DE5 /* VenuePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuePresenterTest.swift; sourceTree = "<group>"; };
 		C1A33F5120CAC1ED00823DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1E782A720CAF8F10090940E /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		C1E782AA20CAF9000090940E /* VenuePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuePresenter.swift; sourceTree = "<group>"; };
 		C1E782AD20CAFE4A0090940E /* FoursquareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareService.swift; sourceTree = "<group>"; };
 		C1E782B020CB00300090940E /* secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secrets.swift; sourceTree = "<group>"; };
+		EF92495DFE7F08C2ACC9D5F1 /* Pods_Venue_SearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Venue_SearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462CC0563066713E0350803F /* Pods_Venue_SearcherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				8D98CA5B1F59C136B0110EEF /* Pods_Venue_Searcher.framework */,
+				EF92495DFE7F08C2ACC9D5F1 /* Pods_Venue_SearcherTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,6 +99,8 @@
 			children = (
 				683B1161110A216BEFB38596 /* Pods-Venue Searcher.debug.xcconfig */,
 				354648CDE168C1B7FF9A4673 /* Pods-Venue Searcher.release.xcconfig */,
+				76F7B237942E7EAEA513DE32 /* Pods-Venue SearcherTests.debug.xcconfig */,
+				2F727521AB69F20C6BE5867C /* Pods-Venue SearcherTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -176,7 +187,7 @@
 		C1A33F4E20CAC1ED00823DE5 /* Venue SearcherTests */ = {
 			isa = PBXGroup;
 			children = (
-				C1A33F4F20CAC1ED00823DE5 /* Venue_SearcherTests.swift */,
+				C1A33F4F20CAC1ED00823DE5 /* VenuePresenterTest.swift */,
 				C1A33F5120CAC1ED00823DE5 /* Info.plist */,
 			);
 			path = "Venue SearcherTests";
@@ -208,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1A33F5720CAC1ED00823DE5 /* Build configuration list for PBXNativeTarget "Venue SearcherTests" */;
 			buildPhases = (
+				20ECCA4E7B9D3B60813AA45A /* [CP] Check Pods Manifest.lock */,
 				C1A33F4720CAC1ED00823DE5 /* Sources */,
 				C1A33F4820CAC1ED00823DE5 /* Frameworks */,
 				C1A33F4920CAC1ED00823DE5 /* Resources */,
+				CF92E23FB17E35ECB1D403D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +294,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		20ECCA4E7B9D3B60813AA45A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Venue SearcherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C6F469911C1DB2C78C2F52DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,6 +348,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Venue Searcher/Pods-Venue Searcher-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CF92E23FB17E35ECB1D403D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Venue SearcherTests/Pods-Venue SearcherTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Venue SearcherTests/Pods-Venue SearcherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -340,7 +389,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1E782AF20CAFE4A0090940E /* FoursquareService.swift in Sources */,
-				C1A33F5020CAC1ED00823DE5 /* Venue_SearcherTests.swift in Sources */,
+				C19C2BEC20CE3C710042D6EE /* VenueDetailView.swift in Sources */,
+				C1A33F5020CAC1ED00823DE5 /* VenuePresenterTest.swift in Sources */,
+				C19C2BEA20CE3C690042D6EE /* VenueView.swift in Sources */,
+				C19C2BEB20CE3C6D0042D6EE /* VenueCell.swift in Sources */,
 				C1E782B220CB00300090940E /* secrets.swift in Sources */,
 				C1E782A920CAF8F10090940E /* Venue.swift in Sources */,
 				C1E782AC20CAF9000090940E /* VenuePresenter.swift in Sources */,
@@ -529,8 +581,9 @@
 		};
 		C1A33F5820CAC1ED00823DE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F7B237942E7EAEA513DE32 /* Pods-Venue SearcherTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Venue SearcherTests/Info.plist";
@@ -549,8 +602,9 @@
 		};
 		C1A33F5920CAC1ED00823DE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F727521AB69F20C6BE5867C /* Pods-Venue SearcherTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Venue SearcherTests/Info.plist";
