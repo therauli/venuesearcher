@@ -45,7 +45,8 @@ class FourSquareService {
                 self.delegate?.received(error: error)
             case .success:
                 do {
-                    try self.parseVenuedata(json: response.result.value as! [String: Any])
+                    let venues = try self.parseVenuedata(json: response.result.value as! [String: Any])
+                    self.delegate?.received(venues: venues)
                 } catch {
                     self.delegate?.received(error: error)
                 }
@@ -53,7 +54,7 @@ class FourSquareService {
         }
     }
     
-    func parseVenuedata(json: [String: Any]) throws {
+    func parseVenuedata(json: [String: Any]) throws -> [Venue]{
         var venues = [Venue]()
         print(json)
         
@@ -82,6 +83,6 @@ class FourSquareService {
                 venues.append(venue)
             }
         }
-        self.delegate?.received(venues: venues)
+        return venues
     }
 }
