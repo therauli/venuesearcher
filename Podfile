@@ -3,5 +3,10 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'Venue Searcher' do
-    pod 'Alamofire', '~> 4.7'
+  pod 'Alamofire', '~> 4.7'
 end
+
+target 'Venue SearcherTests' do 
+  pod 'Alamofire', '~> 4.7'
+end
+
