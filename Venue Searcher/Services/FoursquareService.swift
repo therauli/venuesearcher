@@ -68,7 +68,7 @@ class FourSquareService {
                 }
                 
                 if let categories = venueData["categories"] as? [[String: Any]], let categoryData = categories.first {
-                    category = categoryData["shortName"] as! String
+                    category = categoryData["shortName"] as? String
                 } 
                 
                 let venue = Venue(name: name, lat: lat, lng: lng, category: category, address: address)
