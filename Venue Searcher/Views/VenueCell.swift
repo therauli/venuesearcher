@@ -24,17 +24,17 @@ class VenueCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(venue: Venue, distance: Double) {
+    func setData(venue: Venue, distance: Int) {
         self.venueLabel.text = venue.name
         self.distanceLabel.text = format(distance: distance)
     }
     
-    private func format(distance: Double) -> String {
+    private func format(distance: Int) -> String {
         switch distance {
-        case 0.0 ..< 1000.0:
-            return String(NSString(format: "%.1fm", distance))
+        case 0 ..< 1000:
+            return String(NSString(format: "%im", distance))
         default:
-            return String(NSString(format: "%.1fkm", distance / 1000.0))
+            return String(NSString(format: "%.1fkm", Double(distance) / 1000.0))
         }
 
     }

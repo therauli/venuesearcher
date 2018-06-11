@@ -20,6 +20,7 @@ enum ServiceError: Error {
 }
 
 
+// Services that calls Foursquare API
 class FourSquareService {
     
     static let sharedInstance = FourSquareService()
@@ -54,32 +55,32 @@ class FourSquareService {
         }
     }
     
+    // Used to parse Foursquare API reposnses. Is declared internal to ease testing.
     func parseVenuedata(json: [String: Any]) throws -> [Venue]{
         var venues = [Venue]()
-        print(json)
-        
+
         if  let responseData = json["response"] as? [String: Any], let venuesData = responseData["venues"] as? [[String: Any]] {
-            var lat: Double
-            var lng: Double
-            var category: String?
-            var address: String?
+
             for venueData in venuesData {
-                let name = venueData["name"] as! String
-                if let venueLocation = venueData["location"] as? [String: Any]  {
-                    lat = venueLocation["lat"] as! Double
-                    lng = venueLocation["lng"] as! Double
-                    if let addressList = venueLocation["formattedAddress"] as? [String] {
-                        address = addressList.joined(separator: "\n")
-                    }
-                } else {
-                    throw ServiceError.invalidData(reason: "location data is missing")
+                // Check that every piece of data is there. If these fail there is something really wrong in the Foursquare REST API
+                guard let name = venueData["name"] as? String else { throw ServiceError.invalidData(reason: "No name in venue Data")}
+                guard let venueLocation = venueData["location"] as? [String: Any] else { throw ServiceError.invalidData(reason: "location data is missing") }
+                guard let lat = venueLocation["lat"] as? Double else { throw ServiceError.invalidData(reason: "Latitude missing in location data") }
+                guard let lng = venueLocation["lng"] as? Double else { throw ServiceError.invalidData(reason: "Longitude missing in location data") }
+                guard let distance = venueLocation["distance"] as? Int else { throw ServiceError.invalidData(reason: "Distance missing in location data") }
+                
+                var category: String?
+                var address: String?
+                
+                if let addressList = venueLocation["formattedAddress"] as? [String] {
+                    address = addressList.joined(separator: "\n")
                 }
                 
                 if let categories = venueData["categories"] as? [[String: Any]], let categoryData = categories.first {
                     category = categoryData["shortName"] as? String
                 } 
                 
-                let venue = Venue(name: name, lat: lat, lng: lng, category: category, address: address)
+                let venue = Venue(name: name, lat: lat, lng: lng, distance: distance, category: category, address: address)
                 venues.append(venue)
             }
         }

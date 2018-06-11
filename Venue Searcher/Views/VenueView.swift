@@ -62,7 +62,7 @@ extension VenueView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "venuecell") as! VenueCell
         
         let venue = venueList[indexPath.row]
-        cell.setData(venue: venue, distance: venue.distance(from: venuePresenter.location!))
+        cell.setData(venue: venue, distance: venue.distance)
 
         return cell
     }

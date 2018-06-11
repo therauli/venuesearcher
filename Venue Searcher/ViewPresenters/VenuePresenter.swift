@@ -72,7 +72,7 @@ extension VenuePresenter: FourSquareServiceDelegate {
     func received(venues: [Venue]) {
         view?.hideLoading()
         view?.reloadList(venues: venues.sorted {
-            $0.distance(from: location!) < $1.distance(from: location!)
+            $0.distance < $1.distance
         })
     }
     
